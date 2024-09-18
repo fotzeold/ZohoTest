@@ -14,7 +14,7 @@ import {
 
 const ZohoAuth: React.FC = () => {
 	const clientId = '1000.4B5MRVJVCT0W3W94BJKP5SRJEYV9MO';
-	const redirectUri = 'http://localhost:5173/callback'; // Змініть на ваш URL
+	const redirectUri = 'https://zohotest.vercel.app/callback'; // Змініть на ваш URL
 	const scope = 'ZohoMail.accounts.READ,ZohoMail.folders.READ,ZohoMail.messages.READ';
 
 	const authUrl = `https://accounts.zoho.com/oauth/v2/auth?scope=${scope}&client_id=${clientId}&response_type=code&access_type=offline&redirect_uri=${encodeURIComponent(redirectUri)}`;
@@ -89,7 +89,7 @@ const App: React.FC = () => {
 	const exchangeCodeForTokens = async (code: string) => {
 		const clientId = '1000.4B5MRVJVCT0W3W94BJKP5SRJEYV9MO';
 		const clientSecret = '80925ac3ac075fbe4e094e10c7971e3883e643af5f';
-		const redirectUri = 'http://localhost:5173/callback'; // Змініть на ваш URL
+		const redirectUri = 'https://zohotest.vercel.app/callback'; // Змініть на ваш URL
 
 		try {
 			const response = await axios.post('https://accounts.zoho.com/oauth/v2/token', null, {
